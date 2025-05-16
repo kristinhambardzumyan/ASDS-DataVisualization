@@ -1,0 +1,1 @@
+from pages.overview import register_callbacks
