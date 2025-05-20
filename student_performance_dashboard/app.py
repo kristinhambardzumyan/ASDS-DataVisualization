@@ -1,3 +1,5 @@
+import os
+
 from dash import Dash, html, page_container, dcc, callback, Output, Input
 import dash_bootstrap_components as dbc
 
@@ -72,4 +74,5 @@ from pages.overview import register_callbacks
 register_callbacks(app)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8050))
+    app.run(host="0.0.0.0", port=port, debug=True)
